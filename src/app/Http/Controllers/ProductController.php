@@ -16,4 +16,15 @@ class ProductController extends Controller
 
         return view('index',compact('products', 'seasons'));
     }
+    //商品登録
+    public function create(){
+        $products = Product::all();
+        $seasons = Season::all();
+
+        return view('create',compact('products', 'seasons'));
+    }
+    //商品情報の登録
+    public function store(){
+
+    }
 }

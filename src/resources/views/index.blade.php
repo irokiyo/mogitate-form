@@ -2,6 +2,7 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
+<link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
 @endsection
 
 
@@ -28,7 +29,7 @@
     <div class="product-page__main">
         {{-- 商品追加ボタン --}}
         <div class="product-page__header">
-            <a href="" class="product-page__header-btn">+ 商品を追加</a>
+            <a href="{{ route('products.register') }}" class="product-page__header-btn">+ 商品を追加</a>
         </div>
 
         {{-- 商品一覧 --}}
