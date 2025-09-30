@@ -1,0 +1,232 @@
+
+:root {
+    --bg: #f5f5f5;
+    --panel: #ffffff;
+    --text: #333;
+    --muted: #777;
+    --border: #e6e6e6;
+    --brand: #e0c23a;
+    /* 黄ボタン */
+    --brand-hover: #c9ad2f;
+}
+
+
+
+.product-card__image {
+    max-width: 100%;
+    display: block;
+    box-shadow:0 4px 14px rgba(0, 0, 0, .08);
+    border-radius: 4px;
+}
+
+/* ページ全体 */
+.product-page {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 28px;
+    background: var(--bg);
+    padding: 28px 24px 56px;
+    color: var(--text);
+}
+
+/* ===== sidebar ===== */
+.product__sidebar {
+    align-self: start;
+    padding: 18px;
+}
+
+.sidebar__ttl {
+    font-size: 22px;
+    margin: 0 0 14px;
+}
+
+.sidebar__search-form {
+    display: block;
+    margin-bottom: 18px;
+}
+
+.sidebar__search-form__input {
+    flex: 1;
+    height: 38px;
+    padding: 0 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+}
+
+.sidebar__search-form__input:focus {
+    border-color: #d0bfa0;
+    box-shadow: 0 0 0 3px rgba(208, 191, 160, .25);
+}
+
+.sidebar__search-form__button {
+    height: 38px;
+    padding: 0 16px;
+    border: none;
+    border-radius: 8px;
+    background: var(--brand);
+    color: #222;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .15s ease;
+}
+
+.sidebar__search-form__button:hover {
+    background: var(--brand-hover);
+}
+
+/* sort (価格順) */
+.sort {
+    margin-top: 18px;
+}
+
+.sort__label {
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 8px;
+}
+
+.sort__select {
+    width: 100%;
+    height: 38px;
+    padding: 0 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #fff;
+}
+
+/* ===== main ===== */
+.product-page__main {
+    min-width: 0;
+}
+
+/* 右上の「+ 商品を追加」 */
+.product-page__header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 14px;
+}
+
+.product-page__header-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #444;
+    background-color: orange;
+    border-radius: 5px ;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
+}
+/* 商品カードグリッド */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+/* カード */
+.product-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform .12s ease, box-shadow .18s ease;
+}
+
+.product-card__image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    /* 画像の比率をそろえる */
+    object-fit: cover;
+}
+
+.product-card__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 14px 14px;
+}
+
+.product-card__name {
+    font-size: 16px;
+    margin: 0;
+}
+
+.product-card__price {
+    font-weight: 700;
+    color: #555;
+    margin: 0;
+}
+
+/* ===== ページネーション（Laravel標準ulに馴染ませる） ===== */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 28px 0 0;
+}
+
+.pagination nav {
+    /* Tailwind系テンプレート対策 */
+    display: flex;
+}
+
+.pagination ul {
+    display: flex;
+    gap: 6px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pagination li a,
+.pagination li span {
+    display: inline-flex;
+    min-width: 34px;
+    height: 34px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    border: 1px solid var(--border);
+    background: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #444;
+    box-shadow: var(--shadow);
+}
+
+.pagination li.active span {
+    background: var(--brand);
+    border-color: transparent;
+    font-weight: 700;
+}
+
+/* ===== レスポンシブ ===== */
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 720px) {
+    .product-page {
+        grid-template-columns: 1fr;
+        padding: 18px 14px 40px;
+    }
+
+    .product__sidebar {
+        position: relative;
+        top: 0;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-page__header {
+        justify-content: flex-start;
+    }
+}

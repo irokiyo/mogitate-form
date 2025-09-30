@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/index.css') }}" />
+@endsection
+
+
 @section('content')
 <div class="product-page">
     <div class="product__sidebar">
@@ -14,8 +19,8 @@
             <label for="sort" class="sort__label">価格順で表示</label>
             <select id="sort" name="sort" class="sort__select" onchange="this.form.submit()">
                 <option value="">価格を選択</option>
-                <option value="asc" {{ request('sort') === 'asc' ? 'selected' : '' }}>安い順</option>
-                <option value="desc" {{ request('sort') === 'desc' ? 'selected' : '' }}>高い順</option>
+                <option value="" >1000以下</option>
+                <option value="" >1000以上</option>
             </select>
         </div>
     </div>
@@ -28,13 +33,15 @@
 
         {{-- 商品一覧 --}}
         <div class="product-grid">
+            @foreach ($products as $product)
             <div class="product-card">
-                <img src="" alt="" class="product-card__image">
+                <img src="{{ asset($product->image) }}" alt="" class="product-card__image">
                 <div class="product-card__info">
-                    <p class="product-card__name">フルーツ</p>
-                    <p class="product-card__price">¥300</p>
+                    <p class="product-card__name">{{$product->name}}</p>
+                    <p class="product-card__price">¥{{$product->price}}</p>
                 </div>
             </div>
+            @endforeach
         </div>
 
         {{-- ページネーション --}}
