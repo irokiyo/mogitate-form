@@ -108,7 +108,7 @@ body{
 .form__error {
     margin-top: 6px;
     font-size: 12px;
-    color: #fff;
+    color: ;
     background: var(--danger);
     display: inline-block;
     padding: 4px 8px;

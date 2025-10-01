@@ -11,9 +11,8 @@
     <div class="product__header">
         <h1 class="product_header-ttl">商品登録</h1>
 
-        <form class="product__form" action="{{ route('products.register') }}" method="POST" enctype="multipart/form-data" novalidate>
+        <form class="product__form" action="{{ route('products.register.store') }}" method="POST" enctype="multipart/form-data" novalidate>
             @csrf
-
             {{-- 商品名 --}}
             <div class="form__group">
                 <label for="name" class="form__label">
@@ -28,7 +27,7 @@
                 <label for="price" class="form__label">
                     値段 <span class="form__label-required">必須</span>
                 </label>
-                <input id="price" name="price" type="number" min="0" step="1" inputmode="numeric" class="input" placeholder="値段を入力" value="{{ old('price') }}">
+                <input id="price" name="price" type="text" class="input" placeholder="値段を入力" value="{{ old('price') }}">
                 @error('price') <p class="form__error">{{ $message }}</p> @enderror
             </div>
 

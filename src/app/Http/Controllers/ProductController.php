@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ProductSeasonRequest;
 use App\Models\Product;
 use App\Models\Season;
 
@@ -24,7 +25,11 @@ class ProductController extends Controller
         return view('create',compact('products', 'seasons'));
     }
     //商品情報の登録
-    public function store(){
-
+    public function store(ProductSeasonRequest $request){
+        $product = $request->only(['name','price', 'image','description']);
+        $season = $request->only(['name']);
+        Product::create($product);
+        Season::create($season);
+        return view('index');
     }
 }
