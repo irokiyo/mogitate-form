@@ -28,7 +28,8 @@ class ProductSeasonRequest extends FormRequest
             'price' => ['required', 'integer', 'between:0,10000'],
             'image' => ['required', 'image', 'mimes:png,jpeg'],
             'description' => ['required', 'string', 'max:120'],
-            'season' => ['required'],
+            'seasons' => ['required'],
+            'seasons.*' => ['integer','exists:seasons,id'],
         ];
     }
     public function messages(){
@@ -42,6 +43,7 @@ class ProductSeasonRequest extends FormRequest
             'description.required' => '商品説明を入力してください',
             'description.max' => '120文字以内で入力してください',
             'season.required' => '季節を選択してください',
+            'seasons.*.exists'   => '季節を選択してください',
         ];
     }
 }

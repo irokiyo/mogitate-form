@@ -63,12 +63,10 @@ body{
 }
 .file{
     width: 100%;
-    border: 1px solid var(--border);
     border-radius: 2px;
     padding: 12px 14px;
     transition: .15s ease;
     font-size: 14px;
-    color: transparent;
 }
 
 .textarea {

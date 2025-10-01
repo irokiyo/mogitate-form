@@ -50,7 +50,7 @@
                     <div class="season">
                         @foreach($seasons as $season)
                         <label>
-                            <input class="form-season" type="checkbox" name="seasons" value="{{ $season->id }}" >
+                            <input class="form-season" type="checkbox" name="seasons[]" value="{{ $season->id }}" >
                             {{ $season->name }}
                         </label>
                         @endforeach

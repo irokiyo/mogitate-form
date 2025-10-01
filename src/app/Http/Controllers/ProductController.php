@@ -26,10 +26,17 @@ class ProductController extends Controller
     }
     //商品情報の登録
     public function store(ProductSeasonRequest $request){
-        $product = $request->only(['name','price', 'image','description']);
-        $season = $request->only(['name']);
-        Product::create($product);
-        Season::create($season);
-        return view('index');
+        $path = $request->file('image')->store('products', 'public');
+        $publicPath = '/storage/' . $path;
+
+        $product = Product::create([
+            'name'        => $request->name,
+            'price'       => $request->price,
+            'image'       => $publicPath,
+            'description' => $request->description,
+        ]);
+        $product->seasons()->sync($request->input('seasons', []));
+
+        return redirect()->route('index');
     }
 }
