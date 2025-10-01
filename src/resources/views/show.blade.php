@@ -11,29 +11,25 @@
             <a href="{{ route('products.index') }}">商品一覧</a> <span>›</span> {{ $product->name }}
         </div>
 
-        <form class="form-product" action="{{ route('products.update', $product) }}" method="post" enctype="multipart/form-data">
+        <form class="show-product" action="{{ route('products.update', $product) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
-            <div class="grid grid-cols-12 gap-8">
-                {{-- 左：画像 --}}
-                <div class="col-span-5">
-                    <div class="aspect-[4/3] w-full overflow-hidden rounded-lg border">
+            <div class="show-product">
+                {{-- 画像 --}}
+                <div class="show-product-card">
+                    <div class="show-product-card-img">
                         <img id="preview" src="{{ $product->image_url ?? asset('images/noimage.png') }}" alt="preview" class="w-full h-full object-cover">
                     </div>
-
-                    <label class="mt-4 inline-flex items-center gap-3 cursor-pointer">
-                        <span class="btn">ファイルを選択</span>
+                    <label class="show-product-card-img-upload">
+                        <span class="show-product-card-img-upload-btn">ファイルを選択</span>
                         <input type="file" name="image" accept="image/*" class="hidden" id="imageInput">
-                        <span id="fileName" class="text-sm text-gray-500 truncate">
-                            {{ $product->image ? basename($product->image) : '未選択' }}
-                        </span>
                     </label>
                     @error('image') <p class="text-red-600 text-sm mt-2">{{ $message }}</p> @enderror
                 </div>
 
-                {{-- 右：フォーム --}}
-                <div class="col-span-7 space-y-6">
+                {{-- 右側 --}}
+                <div class="show-product-item">
                     <div>
                         <label class="form-label">商品名</label>
                         <input type="text" name="name" value="{{ old('name', $product->name) }}" class="input">

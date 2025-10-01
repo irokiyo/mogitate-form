@@ -36,7 +36,7 @@
         <div class="product-grid">
             @foreach ($products as $product)
             <div class="product-card">
-                <img src="{{ asset($product->image) }}" alt="" class="product-card__image">
+                <img src="{{ asset(ltrim($product->image, '/')) }}" alt="{{ $product->name }}">
                 <div class="product-card__info">
                     <p class="product-card__name">{{$product->name}}</p>
                     <p class="product-card__price">¥{{$product->price}}</p>
