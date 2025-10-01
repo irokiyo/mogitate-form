@@ -5,7 +5,6 @@
 <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
 @endsection
 
-
 @section('content')
 <div class="product-page">
     <div class="product__sidebar">

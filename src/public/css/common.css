@@ -1,0 +1,20 @@
+.header{
+    width: 100%;
+    background-color: white;
+    height: 50px;
+}
+.header__inner{
+    height: 100%;
+    width: 100%;
+    padding: auto 0;
+}
+.header__logo{
+    text-decoration: none;
+    color: yellow;
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+    padding: 10px 0 0 30px;
+    margin: 30px 0 0 0;
+    font-family: "Oleo Script", system-ui;
+}
