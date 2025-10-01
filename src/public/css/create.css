@@ -98,21 +98,21 @@ body{
 }
 .form-season:checked {
     background-color: black;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10'%3E%3Cpath d='M1 5l3 3 7-7' stroke='%23fff' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .season label {
     font-size: 14px;
 }
 
-/* エラー表示 */
 .form__error {
     margin-top: 6px;
-    font-size: 12px;
-    color: ;
-    background: var(--danger);
+    font-size: 14px;
+    color: red;
     display: inline-block;
     padding: 4px 8px;
-    border-radius: 6px;
 }
 
 .form__btn {

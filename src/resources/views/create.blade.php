@@ -55,7 +55,7 @@
                         </label>
                         @endforeach
                     </div>
-                    @error('seasons') <p class="form__error">{{ $message }}</p> @enderror
+                    @error('season') <p class="form__error">{{ $message }}</p> @enderror
                 </div>
 
                 {{-- 商品説明 --}}
