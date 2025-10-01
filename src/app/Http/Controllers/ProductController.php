@@ -39,4 +39,11 @@ class ProductController extends Controller
 
         return redirect()->route('index');
     }
+    //商品詳細の画面
+    public function show(int $productId){
+        $product = Product::with('seasons')->findOrFail($productId);
+        $seasons = Season::all();
+
+        return view('show', compact('product', 'seasons'));
+    }
 }

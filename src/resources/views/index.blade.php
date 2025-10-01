@@ -36,10 +36,12 @@
         <div class="product-grid">
             @foreach ($products as $product)
             <div class="product-card">
+                <a class="product-card__link" href="{{ route('products.show', ['productId' => $product->id]) }}">
                 <img src="{{ asset(ltrim($product->image, '/')) }}" alt="{{ $product->name }}">
                 <div class="product-card__info">
                     <p class="product-card__name">{{$product->name}}</p>
                     <p class="product-card__price">¥{{$product->price}}</p>
+                </a>
                 </div>
             </div>
             @endforeach
