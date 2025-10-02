@@ -32,7 +32,7 @@ Laravel: 8.83.3
 PHP 8.1 (Docker)
 
 ## ER図
-
+![Alt text](src/public/images/スクリーンショット 2025-10-02 15.24.42.png)
 ## URL
 開発環境：http://localhost/
 phpMyAdmin http://localhost/8080/
