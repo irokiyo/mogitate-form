@@ -88,6 +88,9 @@ main__crumb-span {
     display: grid;
     gap: 22px;
 }
+.form-item-field-description{
+    display: block;
+}
 
 .form-item-field-label {
     display: block;

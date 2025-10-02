@@ -63,7 +63,7 @@
                         @error('season') <p class="form__error">{{ $message }}</p> @enderror
                     </div>
 
-                    <div class="form-item-field">
+                    <div class="form-item-field-description">
                         <label class="form-item-field-label">商品説明</label>
                         <textarea name="description" rows="6" class="pe-textarea">{{ old('description', $product->description) }}</textarea>
                         @error('description') <p class="pe-error">{{ $message }}</p> @enderror
