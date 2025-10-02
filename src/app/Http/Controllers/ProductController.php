@@ -12,8 +12,8 @@ class ProductController extends Controller
 {
     //商品一覧
     public function index(){
-        $products = Product::all();
-        $seasons = Season::all();
+        $products = Product::paginate(4);
+        $seasons = Season::paginate(4);
 
         return view('index',compact('products', 'seasons'));
     }
@@ -84,7 +84,7 @@ class ProductController extends Controller
         $query->priceLow();
         }
 
-        $products = $query->get();
+        $products = $query->paginate(4)->withQueryString();
         return view('index', compact('products'));
     }
 }
