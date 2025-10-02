@@ -22,7 +22,7 @@
             <div class="form__grid">
                 <div class="form__grid-item">
                     <div class="form__grid-image">
-                        <img id="pePreview" src="{{ $product->image}}" alt="preview">
+                        <img id="pePreview" src="{{ asset(ltrim($product->image, '/')) }}" alt="preview">
                     </div>
                     <label class="form__grid-upload">
                         <input type="file" name="image" accept="image/*" id="peImageInput" class="form__grid-upload__input">
