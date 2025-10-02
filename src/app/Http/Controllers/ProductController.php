@@ -72,4 +72,19 @@ class ProductController extends Controller
 
         return redirect()->route('index');
     }
+    //検索
+    public function search(Request $request){
+        $query = Product::query();
+
+        $query->keywordSearch($request->keyword);
+
+        if ($request->sort === 'high') {
+        $query->priceHigh();
+        } elseif ($request->sort === 'low') {
+        $query->priceLow();
+        }
+
+        $products = $query->get();
+        return view('index', compact('products'));
+    }
 }
