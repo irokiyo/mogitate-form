@@ -74,14 +74,14 @@
                 <div class="form-actions__btn">
                     <button type="submit" class="form__btn-update">変更を保存</button>
             </div>
-                <div>
-                    <button type="submit" form="pe-delete" class="pe-btn pe-btn--danger" title="削除">🗑</button>
-                </div>
-            
         </form>
-        <form id="pe-delete" action="" method="post">
+        <form action="{{ route('products.delete',['productId' => $product->id])}}" method="post" class="delete-form">
             @csrf
             @method('DELETE')
+                <div class="delete-form__button">
+                    <button type="submit" class="delete-form__buttonーbtn" title="削除">🗑</button>
+
+                </div>
         </form>
     </div>
 </div>

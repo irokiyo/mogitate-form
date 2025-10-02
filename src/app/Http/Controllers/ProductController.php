@@ -64,4 +64,12 @@ class ProductController extends Controller
 
         return redirect()->route('index');
     }
+    //削除
+    public function destroy($productId){
+        $product = Product::findOrFail($productId);
+        $product->seasons()->detach();
+        $product->delete();
+
+        return redirect()->route('index');
+    }
 }

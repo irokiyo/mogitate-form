@@ -11,5 +11,5 @@ Route::post('/products/register', [ProductController::class, 'store'])->name('pr
 Route::get('/products/{productId}', [ProductController::class, 'show'])->name('products.show'); //商品詳細
 Route::get('/products/search', [ProductController::class, 'search']); //検索
 Route::patch('/products/{productId}/update', [ProductController::class, 'update'])->name('products.update');; //商品更新
-Route::delete('/products/{productId}/delete', [ProductController::class, 'destroy']); //削除
+Route::delete('/products/{productId}/delete', [ProductController::class, 'destroy'])->name('products.delete'); //削除
 

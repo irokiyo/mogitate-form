@@ -20,8 +20,8 @@
             <label for="sort" class="sort__label">価格順で表示</label>
             <select id="sort" name="sort" class="sort__select" onchange="this.form.submit()">
                 <option value="">価格を選択</option>
-                <option value="" >1000以下</option>
-                <option value="" >1000以上</option>
+                <option value="" >高い順に表示</option>
+                <option value="">安い順に表示</option>
             </select>
         </div>
     </div>
