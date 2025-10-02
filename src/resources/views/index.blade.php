@@ -12,18 +12,24 @@
         <h2 class="sidebar__ttl">商品一覧</h2>
         <form action="{{ route('products.search')}}" method="get" class="sidebar__search-form">
         @csrf
-            <input type="text" class="sidebar__search-form__input" name="keyword" value="{{ old('keyword') }}" placeholder="商品名で検索">
+            <input type="text" class="sidebar__search-form__input" name="keyword" value="{{ request('keyword') }}" placeholder="商品名で検索">
             <button type="submit" class="sidebar__search-form__button">検索</button>
         </form>
         {{-- 価格で表示 --}}
-        <div class="sort">
-            <label for="sort" class="sort__label">価格順で表示</label>
-            <select id="sort" name="sort" class="sort__select" onchange="this.form.submit()">
-                <option value="">価格を選択</option>
-                <option value="" >高い順に表示</option>
-                <option value="">安い順に表示</option>
-            </select>
-        </div>
+        <form action="{{ route('products.search')}}" method="get" class="sidebar__search-form">
+        @csrf
+            @if(request('keyword'))
+            <input type="hidden" name="keyword" value="{{ request('keyword') }}">
+            @endif
+            <div class="sort">
+                <label for="sort" class="sort__label">価格順で表示</label>
+                <select id="sort" name="sort" class="sort__select" onchange="this.form.submit()">
+                    <option value="">価格を選択</option>
+                    <option value="high">高い順に表示</option>
+                    <option value="low">安い順に表示</option>
+                </select>
+            </div>
+        </form>
     </div>
 
     <div class="product-page__main">
