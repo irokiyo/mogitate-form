@@ -16,16 +16,14 @@
         </div>
 
         {{-- 更新フォーム --}}
-        <form id="pe-update" class="form" action="" method="post" enctype="multipart/form-data">
+        <form id="form-update" class="form" action="{{ route('products.update', ['productId' => $product->id]) }}" method="post" enctype="multipart/form-data">
+            @method('PATCH')
             @csrf
-            @method('PUT')
-
             <div class="form__grid">
                 <div class="form__grid-item">
                     <div class="form__grid-image">
-                        <img id="pePreview" src="" alt="preview">
+                        <img id="pePreview" src="{{ $product->image}}" alt="preview">
                     </div>
-
                     <label class="form__grid-upload">
                         <input type="file" name="image" accept="image/*" id="peImageInput" class="form__grid-upload__input">
                         <span class="form__grid-upload__btn">ファイルを選択</span>
@@ -45,8 +43,7 @@
 
                     <div class="form-item-field">
                         <label class="form-item-field-label">値段</label>
-                        <input type="number" name="price" value="{{ old('price', $product->price) }}" class="form-item-field-input">
-
+                        <input type="text" name="price" value="{{ old('price', $product->price) }}" class="form-item-field-input">
                         @error('price') <p class="pe-error">{{ $message }}</p> @enderror
                     </div>
 
@@ -59,8 +56,8 @@
                                 {{ $season->name }}
                             </label>
                             @endforeach
+                            @error('season') <p class="form__error">{{ $message }}</p> @enderror
                         </div>
-                        @error('season') <p class="form__error">{{ $message }}</p> @enderror
                     </div>
 
                     <div class="form-item-field-description">
@@ -76,7 +73,6 @@
                 <a href="{{ route('index') }}" class="form__btn-back">戻る</a>
                 <div class="form-actions__btn">
                     <button type="submit" class="form__btn-update">変更を保存</button>
-
             </div>
                 <div>
                     <button type="submit" form="pe-delete" class="pe-btn pe-btn--danger" title="削除">🗑</button>

@@ -46,4 +46,22 @@ class ProductController extends Controller
 
         return view('show', compact('product', 'seasons'));
     }
+    //更新
+    public function update(ProductSeasonRequest $request ,$productId){
+        $product = Product::findOrFail($productId);
+
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('products', 'public');
+            $publicPath = '/storage/' . $path;
+            $product->image = $publicPath;
+        }
+            $product->name        = $request->name;
+            $product->price       = $request->price;
+            $product->description = $request->description;
+            $product->save();
+
+        $product->seasons()->sync($request->input('seasons', []));
+
+        return redirect()->route('index');
+    }
 }
