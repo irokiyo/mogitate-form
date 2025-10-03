@@ -22,7 +22,7 @@
             <input type="hidden" name="keyword" value="{{ request('keyword') }}">
             @endif
             <div class="sort">
-                <label for="sort" class="sort__label">価格順で表示</label>
+                <h1 for="sort" class="sort__label">価格順で表示</h1>
                 <select id="sort" name="sort" class="sort__select" onchange="this.form.submit()">
                     <option value="">価格を選択</option>
                     <option value="high">高い順に表示</option>

@@ -19,7 +19,6 @@
     border-radius: 4px;
 }
 
-/* ページ全体 */
 .product-page {
     display: grid;
     grid-template-columns: 260px 1fr;
@@ -83,7 +82,7 @@
 .sort__label {
     display: block;
     font-size: 13px;
-    color: var(--muted);
+    color: black;
     margin-bottom: 8px;
 }
 
@@ -95,13 +94,10 @@
     border-radius: 8px;
     background: #fff;
 }
-
-/* ===== main ===== */
 .product-page__main {
     min-width: 0;
 }
 
-/* 右上の「+ 商品を追加」 */
 .product-page__header {
     display: flex;
     justify-content: flex-end;
@@ -117,17 +113,16 @@
     text-decoration: none;
     color: #444;
     background-color: orange;
-    border-radius: 5px ;
+    border-radius: 3px ;
     box-shadow: 0 8px 20px rgba(0, 0, 0, .12);
 }
-/* 商品カードグリッド */
+
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 22px;
 }
 
-/* カード */
 .product-card {
     background: var(--panel);
     border: 1px solid var(--border);
@@ -140,7 +135,6 @@
 .product-card__image {
     width: 100%;
     aspect-ratio: 4 / 3;
-    /* 画像の比率をそろえる */
     object-fit: cover;
 }
 
@@ -149,20 +143,30 @@
     justify-content: space-between;
     align-items: center;
     padding: 12px 14px 14px;
+    width: 100%;
 }
 
 .product-card__name {
     font-size: 16px;
     margin: 0;
+    text-decoration: none;
+    font-weight: 700;
+    color: #555;
+    display: inline;
+    padding: 0 120px 0 0 ;
+
 }
 
 .product-card__price {
     font-weight: 700;
     color: #555;
     margin: 0;
+    text-decoration: none;
+    display: inline;
+    align-items: right;
+    width: 80%;
+    
 }
-
-/* ===== ページネーション（Laravel標準ulに馴染ませる） ===== */
 .pagination {
     display: flex;
     justify-content: center;
@@ -170,7 +174,6 @@
 }
 
 .pagination nav {
-    /* Tailwind系テンプレート対策 */
     display: flex;
 }
 
@@ -202,31 +205,4 @@
     background: var(--brand);
     border-color: transparent;
     font-weight: 700;
-}
-
-/* ===== レスポンシブ ===== */
-@media (max-width: 1024px) {
-    .product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 720px) {
-    .product-page {
-        grid-template-columns: 1fr;
-        padding: 18px 14px 40px;
-    }
-
-    .product__sidebar {
-        position: relative;
-        top: 0;
-    }
-
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .product-page__header {
-        justify-content: flex-start;
-    }
 }
