@@ -27,7 +27,7 @@ class ProductController extends Controller
     //商品情報の登録
     public function store(ProductSeasonRequest $request){
         $path = $request->file('image')->store('products', 'public');
-        $publicPath = '/storage/' . $path;
+        $publicPath = $path;
 
         $product = Product::create([
             'name'        => $request->name,
