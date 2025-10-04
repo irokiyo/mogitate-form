@@ -12,8 +12,10 @@
         <h2 class="sidebar__ttl">商品一覧</h2>
         <form action="{{ route('products.search')}}" method="get" class="sidebar__search-form">
         @csrf
-            <input type="text" class="sidebar__search-form__input" name="keyword" value="{{ request('keyword') }}" placeholder="商品名で検索">
-            <button type="submit" class="sidebar__search-form__button">検索</button>
+            <div class="sidebar-keyword">
+                <input type="text" class="sidebar__search-form__input" name="keyword" value="{{ request('keyword') }}" placeholder="商品名で検索">
+                <button type="submit" class="sidebar__search-form__button">検索</button>
+            </div>
         </form>
         {{-- 価格で表示 --}}
         <form action="{{ route('products.search')}}" method="get" class="sidebar__search-form">

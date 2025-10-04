@@ -60,28 +60,28 @@
                             @error('season') <p class="form__error">{{ $message }}</p> @enderror
                         </div>
                     </div>
-
+                </div>
+            </div>
+                <div class="form-item2">
                     <div class="form-item-field-description">
                         <label class="form-item-field-label">商品説明</label>
-                        <textarea name="description" rows="6" class="pe-textarea">{{ old('description', $product->description) }}</textarea>
+                        <textarea name="description" rows="6" class="from-textarea">{{ old('description', $product->description) }}</textarea>
                         @error('description') <p class="pe-error">{{ $message }}</p> @enderror
                     </div>
                 </div>
-            </div>
 
             {{-- ボタン行 --}}
             <div class="form__btn">
                 <a href="{{ route('index') }}" class="form__btn-back">戻る</a>
                 <div class="form-actions__btn">
                     <button type="submit" class="form__btn-update">変更を保存</button>
-            </div>
+                </div>
         </form>
         <form action="{{ route('products.delete',['productId' => $product->id])}}" method="post" class="delete-form">
             @csrf
             @method('DELETE')
                 <div class="delete-form__button">
                     <button type="submit" class="delete-form__buttonーbtn" title="削除">🗑</button>
-
                 </div>
         </form>
     </div>

@@ -28,7 +28,6 @@
     color: var(--text);
 }
 
-/* ===== sidebar ===== */
 .product__sidebar {
     align-self: start;
     padding: 18px;
@@ -38,49 +37,51 @@
     font-size: 22px;
     margin: 0 0 14px;
 }
+.sidebar-keyword{
+    width: 100%;
+    height: 100%;
+
+}
 
 .sidebar__search-form {
-    display: block;
+    display: inline-block;
     margin-bottom: 18px;
 }
 
 .sidebar__search-form__input {
-    flex: 1;
     height: 38px;
+    width: 100%;
+    display: inline-block;
     padding: 0 12px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
+    border: 1px solid #e6e6e6;
+    border-radius: 20px;
     outline: none;
+    margin-bottom: 10px;
 }
 
-.sidebar__search-form__input:focus {
-    border-color: #d0bfa0;
-    box-shadow: 0 0 0 3px rgba(208, 191, 160, .25);
-}
 
 .sidebar__search-form__button {
     height: 38px;
+    width: 100%;
     padding: 0 16px;
     border: none;
-    border-radius: 8px;
-    background: var(--brand);
+    border-radius: 4px;
+    background: #c9ad2f;
     color: #222;
     font-weight: 700;
     cursor: pointer;
     transition: .15s ease;
 }
 
-.sidebar__search-form__button:hover {
-    background: var(--brand-hover);
-}
-
 /* sort (価格順) */
 .sort {
     margin-top: 18px;
+    width: 100%;
+    height: 100%;
 }
 
 .sort__label {
-    display: block;
+    display: inline-block;
     font-size: 13px;
     color: black;
     margin-bottom: 8px;
@@ -90,9 +91,10 @@
     width: 100%;
     height: 38px;
     padding: 0 12px;
-    border: 1px solid var(--border);
+    border: 1px solid #e6e6e6;
     border-radius: 8px;
     background: #fff;
+    display: inline-block;
 }
 .product-page__main {
     min-width: 0;
