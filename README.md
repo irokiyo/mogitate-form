@@ -4,12 +4,12 @@ mogitate-form
 
 ## 環境構築
 Dokerビルド
-1.git clone git@github.com:Estra-Coachtech/laravel-docker-template.git
-2.mv laravel-docker-template mogitate-form
-3.git add .
-4.git commit -m "リモートリポジトリの変更"
-5.git push origin main
-6.docker-compose up -d --build
+1.git clone git@github.com:Estra-Coachtech/laravel-docker-template.git  
+2.mv laravel-docker-template mogitate-form  
+3.git add .  
+4.git commit -m "リモートリポジトリの変更". 
+5.git push origin main  
+6.docker-compose up -d --build  
 
 Laravel環境構築
 1.docker-compose exec php bash
