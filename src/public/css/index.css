@@ -136,8 +136,8 @@
 
 .product-card__image {
     width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
+    object-fit: contain;
+    height: 100%;
 }
 
 .product-card__info {
@@ -146,16 +146,25 @@
     align-items: center;
     padding: 12px 14px 14px;
     width: 100%;
+    justify-content: space-between;
+}
+.product-card__link{
+    width: 100%;
+    justify-content: space-between;
+    text-decoration: none;
+    display: flex;
 }
 
 .product-card__name {
-    font-size: 16px;
+    font-size: 18px;
     margin: 0;
     text-decoration: none;
     font-weight: 700;
     color: #555;
     display: inline;
-    padding: 0 120px 0 0 ;
+    padding: 0 40px 0 0 ;
+    align-items: left;
+    width: 100%;
 
 }
 
@@ -164,9 +173,8 @@
     color: #555;
     margin: 0;
     text-decoration: none;
-    display: inline;
-    align-items: right;
-    width: 80%;
+    text-align: right;
+    width: 100%;
     
 }
 .pagination {

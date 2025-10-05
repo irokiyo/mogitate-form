@@ -45,7 +45,7 @@
             @foreach ($products as $product)
             <div class="product-card">
                 <a class="product-card__link" href="{{ route('products.show', ['productId' => $product->id]) }}">
-                <img src="{{ $product->image_url }}" alt="{{ $product->name }}">
+                <img src="{{ $product->image_url }}" alt="{{ $product->name }}" class="product-card__image">
 
                 <div class="product-card__info">
                     <p class="product-card__name">{{$product->name}}</p>
