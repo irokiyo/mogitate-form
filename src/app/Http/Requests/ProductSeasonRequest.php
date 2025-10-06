@@ -42,7 +42,7 @@ class ProductSeasonRequest extends FormRequest
             'image.mimes' => '「.png」または「.jpeg」形式でアップロードしてください',
             'description.required' => '商品説明を入力してください',
             'description.max' => '120文字以内で入力してください',
-            'season.required' => '季節を選択してください',
+            'seasons.required' => '季節を選択してください',
             'seasons.*.exists'   => '季節を選択してください',
         ];
     }

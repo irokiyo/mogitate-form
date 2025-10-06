@@ -57,7 +57,8 @@
                                     {{ $season->name }}
                                 </label>
                                 @endforeach
-                                @error('season') <p class="form__error">{{ $message }}</p> @enderror
+                                @error('seasons') <p class="pe-error">{{ $message }}</p> @enderror
+                                @error('seasons.*') <p class="pe-error">{{ $message }}</p> @enderror
                             </div>
                         </div>
                     </div>
